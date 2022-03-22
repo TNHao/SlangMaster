@@ -7,4 +7,6 @@ module com.example.slangmaster {
 
     opens com.example.slangmaster to javafx.fxml;
     exports com.example.slangmaster;
+    exports com.example.DashboardController;
+    exports com.example.ScreenController;
 }
