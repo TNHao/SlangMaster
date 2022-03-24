@@ -9,4 +9,5 @@ module com.example.slangmaster {
     exports com.example.slangmaster;
     exports com.example.DashboardController;
     exports com.example.ScreenController;
+    exports com.example.DailySlangController;
 }

@@ -19,13 +19,13 @@ public class SlangMasterApplication extends Application {
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
 
-        ScreenController.addScreen("dailySlang", FXMLLoader.load(getClass().getResource("dailySlang.fxml")));
-        ScreenController.addScreen("dashboard", FXMLLoader.load(getClass().getResource("dashboard.fxml")));
-        ScreenController.addScreen("definitionGuessing", FXMLLoader.load(getClass().getResource("definitionGuessing.fxml")));
-        ScreenController.addScreen("history", FXMLLoader.load(getClass().getResource("history.fxml")));
-        ScreenController.addScreen("slangFinding", FXMLLoader.load(getClass().getResource("slangFinding.fxml")));
-        ScreenController.addScreen("slangGuessing", FXMLLoader.load(getClass().getResource("slangGuessing.fxml")));
-        ScreenController.addScreen("slangLookup", FXMLLoader.load(SlangMasterApplication.class.getResource("slangLookup.fxml")));
+        ScreenController.addScreen("dailySlang", new FXMLLoader(getClass().getResource("dailySlang.fxml")));
+        ScreenController.addScreen("dashboard", new FXMLLoader(getClass().getResource("dashboard.fxml")));
+        ScreenController.addScreen("definitionGuessing", new FXMLLoader(getClass().getResource("definitionGuessing.fxml")));
+        ScreenController.addScreen("history", new FXMLLoader(getClass().getResource("history.fxml")));
+        ScreenController.addScreen("slangFinding", new FXMLLoader(getClass().getResource("slangFinding.fxml")));
+        ScreenController.addScreen("slangGuessing", new FXMLLoader(getClass().getResource("slangGuessing.fxml")));
+        ScreenController.addScreen("slangLookup", new FXMLLoader(SlangMasterApplication.class.getResource("slangLookup.fxml")));
 
         stage.setTitle("Hello!");
         stage.setScene(scene);
