@@ -1,8 +1,10 @@
 package com.example.SlangList;
 
 import com.example.SlangWord.SlangWord;
+import com.example.Utils.Constant;
 import com.example.Utils.Utils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -17,6 +19,10 @@ public final class SlangList {
 
         for (int i = 0; i < list.size(); ++i)
             this.slangMap.put(list.get(i).getSlang().toLowerCase(), i);
+    }
+
+    public ArrayList<SlangWord> getList() {
+        return list;
     }
 
     public SlangWord slangLookUp(String key) {
@@ -36,6 +42,23 @@ public final class SlangList {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public boolean removeSlang(String slang) {
+        try {
+            Integer idx = slangMap.remove(slang);
+            list.remove(idx);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void resetList() throws IOException {
+        list.clear();
+        slangMap.clear();
+        instance = null;
+        Utils.copyFile(Constant.originSlang, Constant.slangFile);
     }
 
     public static SlangList getInstance() {

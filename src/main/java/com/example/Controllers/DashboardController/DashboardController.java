@@ -4,6 +4,7 @@ import com.example.Controllers.ScreenController.ScreenController;
 import com.example.SlangList.SlangList;
 import com.example.SlangWord.SlangWord;
 import com.example.Utils.Constant;
+import com.example.Utils.Utils;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -100,27 +101,27 @@ public class DashboardController {
                 if (res.get() == ButtonType.CANCEL) {
                     return;
                 } else {
-                    // TODO: remove existing slang
-                }
-            } else {
-                boolean status = slangList.addSlang(new SlangWord(slangDefinition.getKey(), slangDefinition.getValue()));
-                if (status) {
-                    Alert success = new Alert(Alert.AlertType.INFORMATION);
-                    success.setTitle("Add slang");
-                    success.setHeaderText("Thêm thành công.");
-                    success.show();
-                } else {
-                    Alert fail = new Alert(Alert.AlertType.ERROR);
-                    fail.setTitle("Add slang");
-                    fail.setHeaderText("Đã có lỗi xảy ra.");
-                    fail.show();
+                    boolean status = slangList.removeSlang(oldSlang.getSlang());
+                    if (!status) {
+                        Utils.showResultAlert("Add slang", "", "Ôi! Đã có lỗi xảy ra.", false);
+                    }
                 }
             }
+
+            boolean status = slangList.addSlang(new SlangWord(slangDefinition.getKey(), slangDefinition.getValue()));
+
+            if (status) Utils.writeListToFile(slangList.getList());
+            Utils.showResultAlert(
+                    "Add Slang",
+                    "Yeah! Thêm Slang thành công.",
+                    "Ôi! Đã có lỗi xảy ra.",
+                    status);
+
         });
     }
 
     @FXML
-    public void onResetClick(ActionEvent actionEvent) {
+    public void onResetClick(ActionEvent actionEvent) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Reset slang list");
         alert.setHeaderText("Khôi phục danh sách slang ban đầu");
@@ -128,9 +129,8 @@ public class DashboardController {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
-            System.out.println("asas");
-        } else {
-            System.out.println("aaaa");
+            SlangList slangList = SlangList.getInstance();
+            slangList.resetList();
         }
     }
 

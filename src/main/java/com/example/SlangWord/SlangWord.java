@@ -31,7 +31,7 @@ public class SlangWord {
         String[] arr = definition.split("\\|");
         String str = "";
 
-        for (String item : arr){
+        for (String item : arr) {
             str = str + item.strip() + "\n";
         }
 
@@ -48,5 +48,9 @@ public class SlangWord {
                 "slang='" + slang + '\'' +
                 ", definition='" + definition + '\'' +
                 '}';
+    }
+
+    public String toCompactString() {
+        return slang + "`" + definition;
     }
 }

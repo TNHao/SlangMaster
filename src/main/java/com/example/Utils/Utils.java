@@ -1,23 +1,21 @@
 package com.example.Utils;
 
+import com.example.SlangList.SlangList;
 import com.example.SlangWord.SlangWord;
+import javafx.scene.control.Alert;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Utils {
-    public static ArrayList<SlangWord> getSlang(){
+    public static ArrayList<SlangWord> getSlang() {
         ArrayList<SlangWord> slangWords = new ArrayList<>();
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(Constant.slangFile));
             String line;
-            while ((line = bufferedReader.readLine()) != null){
+            while ((line = bufferedReader.readLine()) != null) {
                 slangWords.add(new SlangWord(line));
-//                System.out.println(slangWords.get(slangWords.size() - 1).toString());
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -28,7 +26,55 @@ public class Utils {
         return slangWords;
     }
 
-    public static void main(String[] args) {
-        getSlang();
+    public static boolean writeListToFile(ArrayList<SlangWord> list) {
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(Constant.slangFile));
+
+            for (SlangWord slangWord : list) {
+                bufferedWriter.write(slangWord.toCompactString() + "\n");
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
+    public static void showResultAlert(String title, String successText, String failText, boolean status) {
+        if (status) {
+            Alert success = new Alert(Alert.AlertType.INFORMATION);
+            success.setTitle(title);
+            success.setHeaderText(successText);
+            success.show();
+        } else {
+            Alert fail = new Alert(Alert.AlertType.ERROR);
+            fail.setTitle(title);
+            fail.setHeaderText(failText);
+            fail.show();
+        }
+    }
+
+    public static void copyFile(String source, String dest) throws IOException {
+        InputStream is = null;
+        OutputStream os = null;
+
+        is = new FileInputStream(source);
+        os = new FileOutputStream(dest);
+        byte[] buffer = new byte[1024];
+        int length;
+        while ((length = is.read(buffer)) > 0) {
+            os.write(buffer, 0, length);
+        }
+
+        is.close();
+        os.close();
+
+    }
+
+    public static void main(String[] args) throws IOException {
+//        getSlang();
+//        SlangList slangList = SlangList.getInstance();
+//        writeListToFile(slangList.getList());
+        copyFile(Constant.originSlang, "test.txt");
     }
 }
