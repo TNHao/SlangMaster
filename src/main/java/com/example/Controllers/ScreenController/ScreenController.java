@@ -1,6 +1,6 @@
-package com.example.ScreenController;
+package com.example.Controllers.ScreenController;
 
-import com.example.DailySlangController.DailySlangController;
+import com.example.Controllers.DailySlangController.DailySlangController;
 import com.example.slangmaster.SlangMasterApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

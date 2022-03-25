@@ -18,6 +18,7 @@ public class SlangMasterApplication extends Application {
 
         stage.setTitle("Hello!");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

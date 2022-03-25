@@ -5,14 +5,13 @@ import com.example.Utils.Utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Locale;
 
 public final class SlangList {
     private static SlangList instance;
     private ArrayList<SlangWord> list;
     private HashMap<String, Integer> slangMap;
 
-    private SlangList(){
+    private SlangList() {
         this.list = Utils.getSlang();
         this.slangMap = new HashMap<>();
 
@@ -20,7 +19,7 @@ public final class SlangList {
             this.slangMap.put(list.get(i).getSlang().toLowerCase(), i);
     }
 
-    public SlangWord slangLookUp(String key){
+    public SlangWord slangLookUp(String key) {
         Integer idx = slangMap.get(key.toLowerCase());
 
         if (idx != null)
@@ -29,7 +28,17 @@ public final class SlangList {
         return null;
     }
 
-    public static SlangList getInstance(){
+    public boolean addSlang(SlangWord slangWord) {
+        try {
+            list.add(slangWord);
+            slangMap.put(slangWord.getSlang(), list.size() - 1);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static SlangList getInstance() {
         if (instance == null)
             instance = new SlangList();
         return instance;

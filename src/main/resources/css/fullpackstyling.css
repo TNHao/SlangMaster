@@ -150,3 +150,13 @@
 {
     -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
 }
+
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: #524A7B;
+}
+
+.custom-table .table-cell{
+     -fx-text-fill: blue;
+}

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,14 +16,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1042.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1042.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.SlangLookUpController.SlangLookUpController">
     <children>
-        <Pane layoutX="-13.0" prefHeight="649.0" prefWidth="1033.0" stylesheets="@../../../css/fullpackstyling.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-13.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+        <Pane layoutX="-21.0" prefHeight="649.0" prefWidth="1033.0" stylesheets="@../../../css/fullpackstyling.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-21.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
                 <Pane layoutX="643.0" layoutY="258.0" prefHeight="190.0" prefWidth="168.0">
                     <children>
-                        <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Button fx:id="editBtn" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
                         <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
                             <stroke>
                                 <LinearGradient endX="1.0" endY="1.0">
@@ -53,7 +53,7 @@
                             </font></Label>
                     </children>
                 </Pane>
-            <TextField layoutX="82.0" layoutY="177.0" prefHeight="54.0" prefWidth="730.0" promptText="Nhập slang ở đây" style="-fx-text-fill: fff;">
+            <TextField fx:id="slangTextField" layoutX="82.0" layoutY="177.0" prefHeight="54.0" prefWidth="730.0" promptText="Nhập slang ở đây" style="-fx-text-fill: fff;">
                <font>
                   <Font size="25.0" />
                </font>
@@ -61,21 +61,23 @@
                   <String fx:value="button4" />
                   <String fx:value="combo-box" />
                </styleClass>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
             </TextField>
             <Text fill="WHITE" layoutX="-3.0" layoutY="118.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Tra cứu định nghĩa" textAlignment="CENTER" wrappingWidth="1074.470703125">
                <font>
                   <Font size="60.0" />
                </font>
             </Text>
-            <Button layoutX="837.0" layoutY="178.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="175.0" styleClass="button2" text="Tìm" textFill="WHITE">
+            <Button layoutX="837.0" layoutY="178.0" mnemonicParsing="false" onAction="#onLookUpClick" prefHeight="52.0" prefWidth="175.0" styleClass="button2" text="Tìm" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Button>
-            <ListView layoutX="84.0" layoutY="257.0" prefHeight="342.0" prefWidth="505.0" />
             <Pane layoutX="842.0" layoutY="261.0" prefHeight="190.0" prefWidth="168.0">
                <children>
-                  <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                  <Button fx:id="deleteBtn" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
                   <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
                      <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
@@ -121,7 +123,7 @@
             </Pane>
             <Pane layoutX="846.0" layoutY="489.0" prefHeight="110.0" prefWidth="163.0">
                <children>
-                  <Button layoutX="-2.0" layoutY="13.0" mnemonicParsing="false" opacity="0.7" prefHeight="67.0" prefWidth="163.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                  <Button layoutX="-2.0" layoutY="13.0" mnemonicParsing="false" onAction="#onReturnClick" opacity="0.7" prefHeight="67.0" prefWidth="163.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
                   <Circle layoutX="38.0" layoutY="47.0" radius="23.0" strokeType="INSIDE">
                      <stroke>
                         <LinearGradient endX="1.0" endY="1.0">
@@ -160,6 +162,14 @@
                   </Label>
                </children>
             </Pane>
+            <Label fx:id="labelDefinition" alignment="TOP_LEFT" layoutX="86.0" layoutY="257.0" prefHeight="313.0" prefWidth="528.0" style="-fx-background-color: #393351; -fx-background-radius: 20;" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
             </children>
         </Pane>
     </children>

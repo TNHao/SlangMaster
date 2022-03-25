@@ -1,6 +1,8 @@
-package com.example.DashboardController;
+package com.example.Controllers.DashboardController;
 
-import com.example.ScreenController.ScreenController;
+import com.example.Controllers.ScreenController.ScreenController;
+import com.example.SlangList.SlangList;
+import com.example.SlangWord.SlangWord;
 import com.example.Utils.Constant;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -8,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.util.Pair;
 
@@ -30,6 +33,10 @@ public class DashboardController {
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Add new slang");
         dialog.setHeaderText("Thêm một slang mới.");
+        ImageView imageView = new ImageView(this.getClass().getResource("/image/1665680.png").toString());
+        imageView.setFitHeight(50);
+        imageView.setFitWidth(50);
+        dialog.setGraphic(imageView);
 
 // Set the button types.
         ButtonType loginButtonType = new ButtonType("Thêm", ButtonBar.ButtonData.OK_DONE);
@@ -39,12 +46,15 @@ public class DashboardController {
         GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
-        grid.setPadding(new Insets(20, 150, 10, 10));
+        grid.setPadding(new Insets(20, 10, 10, 10));
 
         TextField slang = new TextField();
         slang.setPromptText("Slang");
         TextField definition = new TextField();
         definition.setPromptText("Định nghĩa");
+
+        slang.setMinWidth(250);
+        definition.setMinWidth(250);
 
         grid.add(new Label("Slang:"), 0, 0);
         grid.add(slang, 1, 0);
@@ -75,8 +85,37 @@ public class DashboardController {
 
         Optional<Pair<String, String>> result = dialog.showAndWait();
 
+        SlangList slangList = SlangList.getInstance();
+
         result.ifPresent(slangDefinition -> {
-            System.out.println("Username=" + slangDefinition.getKey() + ", Password=" + slangDefinition.getValue());
+            SlangWord oldSlang = slangList.slangLookUp(slangDefinition.getKey());
+
+            if (oldSlang != null) {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Overwrite");
+                alert.setHeaderText("Slang đã tồn tại.");
+                alert.setContentText("Bạn có muốn ghi đè?");
+
+                Optional<ButtonType> res = alert.showAndWait();
+                if (res.get() == ButtonType.CANCEL) {
+                    return;
+                } else {
+                    // TODO: remove existing slang
+                }
+            } else {
+                boolean status = slangList.addSlang(new SlangWord(slangDefinition.getKey(), slangDefinition.getValue()));
+                if (status) {
+                    Alert success = new Alert(Alert.AlertType.INFORMATION);
+                    success.setTitle("Add slang");
+                    success.setHeaderText("Thêm thành công.");
+                    success.show();
+                } else {
+                    Alert fail = new Alert(Alert.AlertType.ERROR);
+                    fail.setTitle("Add slang");
+                    fail.setHeaderText("Đã có lỗi xảy ra.");
+                    fail.show();
+                }
+            }
         });
     }
 
@@ -88,7 +127,7 @@ public class DashboardController {
         alert.setContentText("Bạn muốn khôi phục?");
 
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
+        if (result.get() == ButtonType.OK) {
             System.out.println("asas");
         } else {
             System.out.println("aaaa");

@@ -66,7 +66,7 @@
                         </Label>
                     </children>
                 </Pane>
-            <TableView layoutX="60.0" layoutY="143.0" prefHeight="342.0" prefWidth="945.0">
+            <TableView layoutX="60.0" layoutY="143.0" prefHeight="342.0" prefWidth="945.0" style="-fx-background-color: #393351;">
               <columns>
                 <TableColumn prefWidth="75.0" text="STT" />
                 <TableColumn prefWidth="75.0" text="Thao tác" />
