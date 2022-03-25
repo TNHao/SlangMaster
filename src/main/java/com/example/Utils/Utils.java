@@ -16,7 +16,9 @@ public class Utils {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 slangWords.add(new SlangWord(line));
+//                System.out.println(slangWords.get(slangWords.size() - 1).toString());
             }
+            bufferedReader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -32,8 +34,10 @@ public class Utils {
 
             for (SlangWord slangWord : list) {
                 bufferedWriter.write(slangWord.toCompactString() + "\n");
+                System.out.println(slangWord.toCompactString());
             }
 
+            bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -75,6 +79,6 @@ public class Utils {
 //        getSlang();
 //        SlangList slangList = SlangList.getInstance();
 //        writeListToFile(slangList.getList());
-        copyFile(Constant.originSlang, "test.txt");
+//        copyFile(Constant.originSlang, Constant.slangFile);
     }
 }

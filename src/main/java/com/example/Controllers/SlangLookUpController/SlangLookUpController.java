@@ -52,7 +52,8 @@ public class SlangLookUpController {
 
         if (result.get() == ButtonType.OK) {
             boolean status = slangList.removeSlang(slangTextField.getText());
-            if (status) Utils.writeListToFile(slangList.getList());
+            if (status)
+                Utils.writeListToFile(slangList.getList());
             Utils.showResultAlert(
                     "Delete Slang",
                     "Yeah! Xóa Slang thành công.",

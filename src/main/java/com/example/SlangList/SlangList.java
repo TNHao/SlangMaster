@@ -47,7 +47,7 @@ public final class SlangList {
     public boolean removeSlang(String slang) {
         try {
             Integer idx = slangMap.remove(slang);
-            list.remove(idx);
+            list.remove(idx.intValue());
             return true;
         } catch (Exception e) {
             return false;
