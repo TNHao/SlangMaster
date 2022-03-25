@@ -1,18 +1,14 @@
 package com.example.DashboardController;
 
-import com.example.DailySlangController.DailySlangController;
 import com.example.ScreenController.ScreenController;
+import com.example.Utils.Constant;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 import javafx.util.Pair;
 
 import java.io.IOException;
@@ -21,12 +17,12 @@ import java.util.Optional;
 public class DashboardController {
     @FXML
     public void onSlangLookUpClick(ActionEvent actionEvent) throws IOException {
-        ScreenController.activate("slangLookup", actionEvent);
+        ScreenController.activate(Constant.slangLookup, actionEvent);
     }
 
     @FXML
     public void onSlangFindingClick(ActionEvent actionEvent) throws IOException {
-        ScreenController.activate("slangFinding", actionEvent);
+        ScreenController.activate(Constant.slangFinding, actionEvent);
     }
 
     @FXML
@@ -101,21 +97,21 @@ public class DashboardController {
 
     @FXML
     public void onDefinitionClick(ActionEvent actionEvent) throws IOException {
-        ScreenController.activate("definitionGuessing", actionEvent);
+        ScreenController.activate(Constant.definitionGuessing, actionEvent);
     }
 
     @FXML
     public void onHistoryClick(ActionEvent actionEvent) throws IOException {
-        ScreenController.activate("history", actionEvent);
+        ScreenController.activate(Constant.history, actionEvent);
     }
 
     @FXML
     public void onDailySlangClick(ActionEvent actionEvent) throws IOException {
-        ScreenController.activate("dailySlang", actionEvent);
+        ScreenController.activate(Constant.dailySlang, actionEvent);
     }
 
     @FXML
     public void onSlangGuessingClick(ActionEvent actionEvent) throws IOException {
-        ScreenController.activate("slangGuessing", actionEvent);
+        ScreenController.activate(Constant.slangGuessing, actionEvent);
     }
 }

@@ -10,21 +10,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 public class ScreenController {
-    private static HashMap<String, FXMLLoader> screenMap = new HashMap<>();
-
-    public static void addScreen(String name, FXMLLoader pane) {
-        screenMap.put(name, pane);
-    }
-
-    public static void removeScreen(String name) {
-        screenMap.remove(name);
-    }
-
     public static void activate(String name, ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(SlangMasterApplication.class.getResource(name + ".fxml"));
+        FXMLLoader loader = new FXMLLoader(SlangMasterApplication.class.getResource(name));
         Parent root = loader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
