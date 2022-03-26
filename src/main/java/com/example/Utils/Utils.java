@@ -16,7 +16,6 @@ public class Utils {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 slangWords.add(new SlangWord(line));
-//                System.out.println(slangWords.get(slangWords.size() - 1).toString());
             }
             bufferedReader.close();
         } catch (FileNotFoundException e) {

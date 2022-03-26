@@ -7,6 +7,7 @@ import com.example.Utils.Utils;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 public final class SlangList {
     private static SlangList instance;
@@ -59,6 +60,11 @@ public final class SlangList {
         slangMap.clear();
         instance = null;
         Utils.copyFile(Constant.originSlang, Constant.slangFile);
+    }
+
+    public SlangWord randomSlang() {
+        Random random = new Random();
+        return list.get(random.nextInt(list.size()));
     }
 
     public static SlangList getInstance() {

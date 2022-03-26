@@ -131,6 +131,7 @@ public class DashboardController {
         if (result.get() == ButtonType.OK) {
             SlangList slangList = SlangList.getInstance();
             slangList.resetList();
+            Utils.showResultAlert("Reset Slang", "Yeah! Khôi phục thành công", "", true);
         }
     }
 

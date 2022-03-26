@@ -1,6 +1,5 @@
 package com.example.Controllers.ScreenController;
 
-import com.example.Controllers.DailySlangController.DailySlangController;
 import com.example.slangmaster.SlangMasterApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -16,16 +15,6 @@ public class ScreenController {
         FXMLLoader loader = new FXMLLoader(SlangMasterApplication.class.getResource(name));
         Parent root = loader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        switch (name) {
-            case "dailySlang": {
-                DailySlangController dailySlangController = loader.getController();
-                dailySlangController.setText("sfbfgns");
-                break;
-            }
-            default:
-                break;
-        }
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
