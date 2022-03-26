@@ -13,4 +13,5 @@ module com.example.slangmaster {
     exports com.example.Controllers.DailySlangController;
     exports com.example.Controllers.SlangLookUpController;
     exports com.example.Controllers.HistoryController;
+    exports com.example.Controllers.DefinitionGuessing;
 }
