@@ -16,4 +16,6 @@ module com.example.slangmaster {
     exports com.example.Controllers.DefinitionGuessingController;
     exports com.example.Controllers.SlangGuessingController;
     exports com.example.Controllers.GameGuessingController;
+    exports com.example.Controllers.SlangFindingController;
+    exports com.example.Controllers.ShareController;
 }

@@ -35,6 +35,18 @@ public final class SlangList {
         return null;
     }
 
+    public ArrayList<SlangWord> slangFinding(String key){
+        ArrayList<SlangWord> slangs = new ArrayList<>();
+
+        for (SlangWord slangWord: list){
+            String definition = slangWord.getDefinition().toLowerCase();
+            if (definition.contains(key))
+                slangs.add(slangWord);
+        }
+
+        return slangs;
+    }
+
     public boolean addSlang(SlangWord slangWord) {
         try {
             list.add(slangWord);

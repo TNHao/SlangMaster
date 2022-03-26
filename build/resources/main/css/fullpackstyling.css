@@ -284,3 +284,18 @@
     -fx-padding: 0.2em;
     -fx-shape: "M4,17v-2.889l4.124-3.86l4.125,3.86V17l-4.125-3.375L4,17z";
 }
+
+.list-cell{
+    -fx-background-color: #393351;
+    -fx-background-radius: 20px;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+
+.list-cell:selected:focused, .list-cell:filled:selected{
+    -fx-background-color: #524A7B;
+}
+
+.list-cell:filled:hover{
+    -fx-background-color: #524A7B;
+}

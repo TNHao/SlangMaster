@@ -35,7 +35,6 @@ public class Utils {
 
             for (SlangWord slangWord : list) {
                 bufferedWriter.write(slangWord.toCompactString() + "\n");
-                System.out.println(slangWord.toCompactString());
             }
 
             bufferedWriter.close();

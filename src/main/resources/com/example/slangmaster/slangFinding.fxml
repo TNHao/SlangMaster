@@ -16,12 +16,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1042.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1042.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.SlangFindingController.SlangFindingController">
     <children>
         <Pane layoutX="-13.0" prefHeight="649.0" prefWidth="1033.0" stylesheets="@../../../css/fullpackstyling.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-13.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
-                <Pane layoutX="643.0" layoutY="258.0" prefHeight="190.0" prefWidth="168.0" styleClass="button2">
+                <Pane fx:id="editPane" layoutX="643.0" layoutY="258.0" prefHeight="190.0" prefWidth="168.0" styleClass="button2">
                     <children>
                         <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
                             <stroke>
@@ -50,10 +50,10 @@
                             <font>
                                 <Font name="Arial Bold" size="18.0" />
                             </font></Label>
-                        <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Button fx:id="editBtn" mnemonicParsing="false" onAction="#onEditClick" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
                     </children>
                 </Pane>
-                <TextField layoutX="82.0" layoutY="177.0" prefHeight="54.0" prefWidth="730.0" promptText="Nhập định nghĩa ở đây" style="-fx-text-fill: fff;">
+                <TextField fx:id="definitionText" layoutX="82.0" layoutY="177.0" prefHeight="54.0" prefWidth="730.0" promptText="Nhập định nghĩa ở đây" style="-fx-text-fill: fff;">
                     <font>
                         <Font size="25.0" />
                     </font>
@@ -67,13 +67,13 @@
                         <Font size="60.0" />
                     </font>
                 </Text>
-                <Button layoutX="837.0" layoutY="178.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="175.0" styleClass="button2" text="Tìm" textFill="WHITE">
+                <ListView fx:id="listView" layoutX="84.0" layoutY="257.0" prefHeight="342.0" prefWidth="521.0" style="-fx-background-color: #393351; -fx-background-radius: 20;" />
+                <Button layoutX="837.0" layoutY="178.0" mnemonicParsing="false" onAction="#onFindingClick" prefHeight="52.0" prefWidth="175.0" styleClass="button2" text="Tìm" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="25.0" />
                     </font>
                 </Button>
-                <ListView layoutX="84.0" layoutY="257.0" prefHeight="342.0" prefWidth="505.0" />
-                <Pane layoutX="842.0" layoutY="261.0" prefHeight="190.0" prefWidth="168.0" styleClass="button2">
+                <Pane fx:id="deletePane" layoutX="842.0" layoutY="261.0" prefHeight="190.0" prefWidth="168.0" styleClass="button2">
                     <children>
                         <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
                             <stroke>
@@ -117,6 +117,7 @@
                             </font>
                         </Label>
                         <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
+                  <Button fx:id="deleteBtn" layoutY="1.0" mnemonicParsing="false" onAction="#onDeleteClick" opacity="0.7" prefHeight="190.0" prefWidth="168.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
                     </children>
                 </Pane>
                 <Pane layoutX="846.0" layoutY="499.0" prefHeight="70.0" prefWidth="163.0" styleClass="button2">
@@ -157,7 +158,7 @@
                                 <Font name="Arial Bold" size="18.0" />
                             </font>
                         </Label>
-                        <Button layoutY="1.0" mnemonicParsing="false" opacity="0.7" prefHeight="67.0" prefWidth="163.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Button layoutY="1.0" mnemonicParsing="false" onAction="#onReturnClick" opacity="0.7" prefHeight="67.0" prefWidth="163.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
                     </children>
                 </Pane>
             </children>
