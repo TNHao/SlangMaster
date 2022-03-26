@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1042.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1042.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.DefinitionGuessing.DefinitionGuessing">
     <children>
         <Pane layoutX="-13.0" prefHeight="649.0" prefWidth="1033.0" stylesheets="@../../../css/fullpackstyling.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-13.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -49,16 +50,15 @@
                                 <Image url="@../../../image/4456158-modified.png" />
                             </image>
                         </ImageView>
-                        <Label alignment="CENTER" layoutX="131.0" layoutY="34.0" prefHeight="27.0" prefWidth="122.0" text="Slang?" textFill="WHITE">
+                        <Label fx:id="slangLabel" alignment="TOP_LEFT" layoutX="104.0" layoutY="34.0" prefHeight="27.0" prefWidth="847.0" text="Slang?" textFill="WHITE">
                             <font>
                                 <Font name="Arial Bold" size="24.0" />
                             </font>
                         </Label>
                     </children>
                 </Pane>
-                <Pane layoutX="77.0" layoutY="270.0" prefHeight="134.0" prefWidth="460.0">
+                <Pane layoutX="77.0" layoutY="270.0" prefHeight="134.0" prefWidth="460.0" styleClass="button2">
                     <children>
-                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" opacity="0.7" prefHeight="134.0" prefWidth="462.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
                         <Circle layoutX="61.0" layoutY="64.0" radius="33.0" strokeType="INSIDE">
                             <stroke>
                                 <LinearGradient endX="1.0" endY="1.0">
@@ -88,15 +88,15 @@
                                 <Image url="@../../../image/3564016-modified.png" />
                             </image>
                         </ImageView>
-                        <Label alignment="CENTER" layoutX="94.0" layoutY="52.0" prefHeight="27.0" prefWidth="112.0" text="Slang" textFill="WHITE">
+                        <Label fx:id="aLabel" alignment="TOP_LEFT" layoutX="104.0" layoutY="33.0" prefHeight="66.0" prefWidth="356.0" text="Slang" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="Arial Bold" size="24.0" />
                             </font></Label>
+                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" onAction="#aClick" opacity="0.7" prefHeight="134.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
                     </children>
                 </Pane>
-                <Pane layoutX="560.0" layoutY="270.0" prefHeight="134.0" prefWidth="460.0">
+                <Pane layoutX="560.0" layoutY="270.0" prefHeight="134.0" prefWidth="460.0" styleClass="button2">
                     <children>
-                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" opacity="0.7" prefHeight="134.0" prefWidth="462.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
                         <Circle layoutX="61.0" layoutY="64.0" radius="33.0" strokeType="INSIDE">
                             <stroke>
                                 <LinearGradient endX="1.0" endY="1.0">
@@ -126,16 +126,16 @@
                                 <Image url="@../../../image/3564021-modified.png" />
                             </image>
                         </ImageView>
-                        <Label alignment="CENTER" layoutX="94.0" layoutY="52.0" prefHeight="27.0" prefWidth="112.0" text="Slang" textFill="WHITE">
+                        <Label fx:id="bLabel" alignment="TOP_LEFT" layoutX="104.0" layoutY="33.0" prefHeight="67.0" prefWidth="356.0" text="Slang" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="Arial Bold" size="24.0" />
                             </font>
                         </Label>
+                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" onAction="#bClick" opacity="0.7" prefHeight="134.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
                     </children>
                 </Pane>
-                <Pane layoutX="77.0" layoutY="421.0" prefHeight="134.0" prefWidth="460.0">
+                <Pane layoutX="77.0" layoutY="421.0" prefHeight="134.0" prefWidth="460.0" styleClass="button2">
                     <children>
-                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" opacity="0.7" prefHeight="134.0" prefWidth="462.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
                         <Circle layoutX="61.0" layoutY="64.0" radius="33.0" strokeType="INSIDE">
                             <stroke>
                                 <LinearGradient endX="1.0" endY="1.0">
@@ -170,16 +170,16 @@
                                 <Image url="@../../../image/3564028-modified.png" />
                             </image>
                         </ImageView>
-                        <Label alignment="CENTER" layoutX="94.0" layoutY="52.0" prefHeight="27.0" prefWidth="112.0" text="Slang" textFill="WHITE">
+                        <Label fx:id="cLabel" alignment="TOP_LEFT" layoutX="102.0" layoutY="32.0" prefHeight="66.0" prefWidth="356.0" text="Slang" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="Arial Bold" size="24.0" />
                             </font>
                         </Label>
+                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" onAction="#cClick" opacity="0.7" prefHeight="134.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
                     </children>
                 </Pane>
-                <Pane layoutX="559.0" layoutY="418.0" prefHeight="134.0" prefWidth="460.0">
+                <Pane layoutX="559.0" layoutY="418.0" prefHeight="134.0" prefWidth="460.0" styleClass="button2">
                     <children>
-                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" opacity="0.7" prefHeight="134.0" prefWidth="462.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
                         <Circle layoutX="61.0" layoutY="64.0" radius="33.0" strokeType="INSIDE">
                             <stroke>
                                 <LinearGradient endX="1.0" endY="1.0">
@@ -214,17 +214,20 @@
                                 <Image url="@../../../image/3564035-modified.png" />
                             </image>
                         </ImageView>
-                        <Label alignment="CENTER" layoutX="94.0" layoutY="52.0" prefHeight="27.0" prefWidth="112.0" text="Slang" textFill="WHITE">
+                        <Label fx:id="dLabel" alignment="TOP_LEFT" layoutX="104.0" layoutY="33.0" prefHeight="66.0" prefWidth="356.0" text="Slang" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="Arial Bold" size="24.0" />
                             </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                         </Label>
+                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" onAction="#dClick" opacity="0.7" prefHeight="134.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
                     </children>
                 </Pane>
-                <Pane layoutX="857.0" layoutY="550.0" prefHeight="110.0" prefWidth="163.0">
+                <Pane layoutX="857.0" layoutY="563.0" prefHeight="67.0" prefWidth="163.0" styleClass="button2">
                     <children>
-                        <Button layoutX="-2.0" layoutY="13.0" mnemonicParsing="false" opacity="0.7" prefHeight="67.0" prefWidth="163.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
-                        <Circle layoutX="38.0" layoutY="47.0" radius="23.0" strokeType="INSIDE">
+                        <Circle layoutX="40.0" layoutY="34.0" radius="23.0" strokeType="INSIDE">
                             <stroke>
                                 <LinearGradient endX="1.0" endY="1.0">
                                     <stops>
@@ -250,18 +253,24 @@
                                 </LinearGradient>
                             </fill>
                         </Circle>
-                        <ImageView fitHeight="49.0" fitWidth="20.0" layoutX="28.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="49.0" fitWidth="20.0" layoutX="30.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../image/709624-modified.png" />
                             </image>
                         </ImageView>
-                        <Label alignment="CENTER" layoutX="73.0" layoutY="36.0" prefHeight="21.0" prefWidth="68.0" text="Trở về" textFill="WHITE">
+                        <Label alignment="CENTER" layoutX="75.0" layoutY="23.0" prefHeight="21.0" prefWidth="68.0" text="Trở về" textFill="WHITE">
                             <font>
                                 <Font name="Arial Bold" size="18.0" />
                             </font>
                         </Label>
+                        <Button mnemonicParsing="false" onAction="#onReturnClick" opacity="0.7" prefHeight="67.0" prefWidth="163.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
                     </children>
                 </Pane>
+            <Label fx:id="scoreLabel" layoutX="79.0" layoutY="567.0" text="Điểm:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
     </children>

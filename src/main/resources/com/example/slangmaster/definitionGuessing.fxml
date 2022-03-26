@@ -92,7 +92,7 @@
                             <font>
                                 <Font name="Arial Bold" size="24.0" />
                             </font></Label>
-                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" opacity="0.7" prefHeight="134.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" onAction="#aClick" opacity="0.7" prefHeight="134.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
                     </children>
                 </Pane>
                 <Pane layoutX="560.0" layoutY="270.0" prefHeight="134.0" prefWidth="460.0" styleClass="button2">
@@ -131,7 +131,7 @@
                                 <Font name="Arial Bold" size="24.0" />
                             </font>
                         </Label>
-                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" opacity="0.7" prefHeight="134.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" onAction="#bClick" opacity="0.7" prefHeight="134.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
                     </children>
                 </Pane>
                 <Pane layoutX="77.0" layoutY="421.0" prefHeight="134.0" prefWidth="460.0" styleClass="button2">
@@ -175,7 +175,7 @@
                                 <Font name="Arial Bold" size="24.0" />
                             </font>
                         </Label>
-                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" opacity="0.7" prefHeight="134.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" onAction="#cClick" opacity="0.7" prefHeight="134.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
                     </children>
                 </Pane>
                 <Pane layoutX="559.0" layoutY="418.0" prefHeight="134.0" prefWidth="460.0" styleClass="button2">
@@ -222,7 +222,7 @@
                         <Insets />
                      </opaqueInsets>
                         </Label>
-                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" opacity="0.7" prefHeight="134.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Button layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" onAction="#dClick" opacity="0.7" prefHeight="134.0" prefWidth="462.0" style="-fx-background-color: transparent;" stylesheets="@../../../css/fullpackstyling.css" />
                     </children>
                 </Pane>
                 <Pane layoutX="857.0" layoutY="563.0" prefHeight="67.0" prefWidth="163.0" styleClass="button2">
