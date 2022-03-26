@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1030.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.DashboardController.DashboardController">
+    <children>
+        <Pane layoutX="1.0" layoutY="-8.0" prefHeight="649.0" prefWidth="1029.0" stylesheets="@../../../css/fullpackstyling.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-8.0">
+            <children>
+                <Pane layoutX="-31.0" layoutY="-130.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
+                <Pane layoutX="70.0" layoutY="154.0" prefHeight="190.0" prefWidth="168.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onSlangLookUpClick" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                            <stroke>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop color="BLACK" />
+                                        <Stop color="WHITE" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </stroke>
+                            <fill>
+                                <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                                    <stops>
+                                        <Stop color="#03b5fc" />
+                                        <Stop color="WHITE" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </fill>
+                        </Circle>
+                        <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="62.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/5067350-modified.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="-6.0" layoutY="146.0" prefHeight="17.0" prefWidth="174.0" text="Tra định nghĩa" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="310.0" layoutY="154.0" prefHeight="202.0" prefWidth="179.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onSlangFindingClick" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                            <stroke>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop color="BLACK" />
+                                        <Stop color="WHITE" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </stroke>
+                            <fill>
+                                <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                                    <stops>
+                                        <Stop color="#68479f" />
+                                        <Stop color="WHITE" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </fill>
+                        </Circle>
+                        <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="63.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/2342292-modified.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text=" Tìm kiếm slang" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="65.0" layoutY="402.0" prefHeight="190.0" prefWidth="168.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onAddClick" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                            <stroke>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop color="BLACK" />
+                                        <Stop color="WHITE" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </stroke>
+                            <fill>
+                                <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                                    <stops>
+                                        <Stop color="#ff52e2" />
+                                        <Stop color="WHITE" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </fill>
+                        </Circle>
+                        <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="62.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/1665629-modified.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="3.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Thêm slang mới" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="310.0" layoutY="402.0" prefHeight="202.0" prefWidth="179.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onResetClick" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" stroke="#ff924f" strokeType="INSIDE">
+                            <fill>
+                                <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                                    <stops>
+                                        <Stop color="#ff934f" />
+                                        <Stop color="WHITE" offset="0.9961685823754789" />
+                                        <Stop color="WHITE" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </fill>
+                        </Circle>
+                        <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="62.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/reset-modified.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Reset danh sách slang" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="553.0" layoutY="402.0" prefHeight="202.0" prefWidth="179.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onDefinitionClick" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                            <fill>
+                                <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                                    <stops>
+                                        <Stop color="#34e063" />
+                                        <Stop color="WHITE" offset="0.9961685823754789" />
+                                        <Stop color="WHITE" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </fill>
+                        </Circle>
+                        <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="63.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/3261258-modified.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Đoán định nghĩa" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="553.0" layoutY="154.0" prefHeight="190.0" prefWidth="174.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onHistoryClick" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                            <fill>
+                                <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                                    <stops>
+                                        <Stop color="#4f79ff" />
+                                        <Stop color="WHITE" offset="0.9961685823754789" />
+                                        <Stop color="#4f79ff" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </fill>
+                        </Circle>
+                        <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="62.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/565526-modified.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Lịch sử tìm kiếm" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="785.0" layoutY="156.0" prefHeight="190.0" prefWidth="174.0">
+                    <children>
+                        <Button layoutX="3.0" mnemonicParsing="false" onAction="#onDailySlangClick" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                            <fill>
+                                <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                                    <stops>
+                                        <Stop>
+                                            <color>
+                                                <Color red="1.0" green="0.3100000023841858" blue="0.44402876496315" />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="0.9961685823754789">
+                                            <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="1.0">
+                                            <color>
+                                                <Color red="1.0" green="0.3100000023841858" blue="0.3100000023841858" />
+                                            </color>
+                                        </Stop>
+                                    </stops>
+                                </LinearGradient>
+                            </fill>
+                        </Circle>
+                        <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="63.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/4456158-modified.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Slang mới mỗi ngày" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="788.0" layoutY="402.0" prefHeight="202.0" prefWidth="179.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onSlangGuessingClick" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" />
+                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
+                            <fill>
+                                <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
+                                    <stops>
+                                        <Stop>
+                                            <color>
+                                                <Color red="0.7894737124443054" green="0.1937134563922882" blue="0.6603922843933105" />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="0.9961685823754789">
+                                            <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="1.0">
+                                            <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                            </color>
+                                        </Stop>
+                                    </stops>
+                                </LinearGradient>
+                            </fill>
+                        </Circle>
+                        <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="63.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../image/2500024-modified.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Đoán Slang" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            <Text fill="WHITE" layoutX="1.0" layoutY="96.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Slang Master" textAlignment="CENTER" wrappingWidth="1027.803955078125">
+               <font>
+                  <Font size="60.0" />
+               </font>
+            </Text>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

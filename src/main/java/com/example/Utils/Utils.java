@@ -5,6 +5,8 @@ import com.example.SlangWord.SlangWord;
 import javafx.scene.control.Alert;
 
 import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Utils {
@@ -72,6 +74,16 @@ public class Utils {
         is.close();
         os.close();
 
+    }
+
+    public static String getLocaleDateTime(){
+        LocalDateTime dateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        return dateTime.format(formatter);
+    }
+
+    public static String getStatusString(boolean status){
+        return status ? "Thành công" : "Thất bại";
     }
 
     public static void main(String[] args) throws IOException {

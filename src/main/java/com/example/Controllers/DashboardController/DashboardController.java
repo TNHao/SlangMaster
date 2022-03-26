@@ -1,6 +1,8 @@
 package com.example.Controllers.DashboardController;
 
 import com.example.Controllers.ScreenController.ScreenController;
+import com.example.History.History;
+import com.example.History.HistoryList;
 import com.example.SlangList.SlangList;
 import com.example.SlangWord.SlangWord;
 import com.example.Utils.Constant;
@@ -19,6 +21,8 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class DashboardController {
+    private HistoryList historyList = HistoryList.getInstance();
+
     @FXML
     public void onSlangLookUpClick(ActionEvent actionEvent) throws IOException {
         ScreenController.activate(Constant.slangLookup, actionEvent);
@@ -108,15 +112,21 @@ public class DashboardController {
                 }
             }
 
-            boolean status = slangList.addSlang(new SlangWord(slangDefinition.getKey(), slangDefinition.getValue()));
+            SlangWord newSlang = new SlangWord(slangDefinition.getKey(), slangDefinition.getValue());
+            boolean status = slangList.addSlang(newSlang);
 
             if (status) Utils.writeListToFile(slangList.getList());
+            historyList.addHistory(
+                    new History(Utils.getLocaleDateTime(),
+                            Constant.ActionTypes.add,
+                            Utils.getStatusString(status),
+                            newSlang.toCompactString())
+            );
             Utils.showResultAlert(
                     "Add Slang",
                     "Yeah! Thêm Slang thành công.",
                     "Ôi! Đã có lỗi xảy ra.",
                     status);
-
         });
     }
 
@@ -128,6 +138,12 @@ public class DashboardController {
         alert.setContentText("Bạn muốn khôi phục?");
 
         Optional<ButtonType> result = alert.showAndWait();
+        historyList.addHistory(
+                new History(Utils.getLocaleDateTime(),
+                        Constant.ActionTypes.reset,
+                        Utils.getStatusString(true),
+                        "Toàn bộ danh sách")
+        );
         if (result.get() == ButtonType.OK) {
             SlangList slangList = SlangList.getInstance();
             slangList.resetList();
