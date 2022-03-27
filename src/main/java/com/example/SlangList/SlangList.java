@@ -18,8 +18,11 @@ public final class SlangList {
         this.list = Utils.getSlang();
         this.slangMap = new HashMap<>();
 
-        for (int i = 0; i < list.size(); ++i)
+        for (int i = 0; i < list.size(); ++i) {
             this.slangMap.put(list.get(i).getSlang().toLowerCase(), i);
+            if (i == 550)
+                System.out.println(i);
+        }
     }
 
     public ArrayList<SlangWord> getList() {
